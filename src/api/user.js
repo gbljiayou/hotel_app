@@ -15,7 +15,7 @@ export function userLogin(username, password) {
 
 export function userRegister(data) {
   return request({
-    url: URL + '/register',
+    url: '/register/' + URL,
     method: 'post',
     data: data
   })

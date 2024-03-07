@@ -4,7 +4,7 @@
     <mu-button icon slot="left" @click="open = !open">
       <mu-icon value="menu"></mu-icon>
     </mu-button>
-    <mu-button flat  @click="navigateTo('/')"><h2>HO酒店</h2></mu-button>
+    <mu-button flat  @click="navigateTo('/')"><h2>奥利阳酒店</h2></mu-button>
     <mu-menu slot="right" open-on-hover v-if="this.isLogin()">
       <mu-button flat>
         <mu-chip class="demo-chip" color="primary">
