@@ -2,7 +2,7 @@
   <div class="login-container">
     <mu-card class="login-card" raised>
       <mu-form ref="form" :model="validateForm" class="mu-demo-form">
-        <mu-card-title class="mu-card-title" sub-title="用户登录" title="奥利阳酒店" style="text-align: center;"></mu-card-title>
+        <mu-card-title id="login-title" title="奥利阳酒店"></mu-card-title>
         <mu-card-text>
           <mu-form-item label="用户名" prop="username" :rules="usernameRules">
             <mu-text-field v-model="validateForm.username" prop="username"></mu-text-field>
@@ -11,13 +11,13 @@
             <mu-text-field type="password" v-model="validateForm.password" prop="password" @keyup.enter="submit"></mu-text-field>
           </mu-form-item>
           <mu-form-item>
-            <mu-button flat style="display:block;margin:0 auto">忘记密码？</mu-button>
-            <mu-button flat @click="navigateTo('/register')" style="display:block;margin:0 auto">立即注册</mu-button>
+            <mu-button id="login-button" flat>忘记密码？</mu-button>
+            <mu-button id="login-button" flat @click="navigateTo('/register')">立即注册</mu-button>
           </mu-form-item>
         </mu-card-text>
         <mu-card-actions>
           <mu-form-item>
-            <mu-button color="primary" @click="submit" style="display:block;margin:0 auto">登录</mu-button>
+            <mu-button id="login-button" color="primary" @click="submit">登录</mu-button>
             <!--            <mu-button @click="navigateTo('/')">先随便逛逛</mu-button>-->
           </mu-form-item>
         </mu-card-actions>
@@ -90,28 +90,33 @@ export default {
 
 <style scoped>
 .login-container {
+  background: url("../assets/imgs/login.jpg") no-repeat;
+  height: 100vh;
   width: 100%;
-  height: 1000px;
-  //background-image: linear-gradient(270deg, #4662b4, #6990f6);
-  background: #2196f3;
-  padding: 8px;
+  overflow: hidden;
+  background-size: cover; //或者background-size:100%;
 }
 
 .mu-demo-form {
-  width: 100%;
-  /*max-width: 460px;*/
+  background: aliceblue;
+}
+
+#login-title {
+  text-align: center;
+  font-weight: bold;
+  font-family: Serif;
+  font-size: large;
+}
+
+#login-button {
+  margin: auto;
+  display: block;
 }
 
 .login-card {
   width: 100%;
   max-width: 30%;
-  //max-height: 80%;
-  margin: 50px auto;
-}
-
-.mu-card-title {
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
+  max-height: 100%;
+  margin: 120px auto;
 }
 </style>

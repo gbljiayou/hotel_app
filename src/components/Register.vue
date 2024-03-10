@@ -2,7 +2,7 @@
   <div class="login-container">
     <mu-card class="login-card" raised>
       <mu-form ref="form" :model="validateForm" label-position="left" label-width="100" class="mu-demo-form">
-        <mu-card-title title="奥利阳酒店" sub-title="用户注册" style="text-align: center;"></mu-card-title>
+        <mu-card-title title="奥利阳酒店" style="text-align: center;"></mu-card-title>
         <mu-card-text>
           <mu-form-item label="用户名" help-text="" prop="username" :rules="rules.notNull">
             <mu-text-field v-model="validateForm.username"></mu-text-field>
@@ -26,9 +26,9 @@
           <mu-form-item label="手机号" help-text="" prop="phone" :rules="rules.notNull">
             <mu-text-field v-model="validateForm.phone"></mu-text-field>
           </mu-form-item>
-          <mu-form-item label="地址" help-text="" prop="address" :rules="rules.notNull">
-            <mu-text-field v-model="validateForm.address"></mu-text-field>
-          </mu-form-item>
+<!--          <mu-form-item label="地址" help-text="" prop="address" :rules="rules.notNull">-->
+<!--            <mu-text-field v-model="validateForm.address"></mu-text-field>-->
+<!--          </mu-form-item>-->
           <mu-form-item label="身份证号" help-text="" prop="idcard" :rules="rules.notNull">
             <mu-text-field v-model="validateForm.idcard"></mu-text-field>
           </mu-form-item>
@@ -36,8 +36,8 @@
         </mu-card-text>
         <mu-card-actions>
           <mu-form-item>
-            <mu-button color="primary" @click="submit" style="display:block;margin:0 auto">注册</mu-button>
-            <mu-button color="primary" @click="clear" style="display:block;margin:0 auto">重置</mu-button>
+            <mu-button id="login-button" color="primary" @click="submit">注册</mu-button>
+            <mu-button id="login-button" color="primary" @click="clear">重置</mu-button>
           </mu-form-item>
         </mu-card-actions>
       </mu-form>
@@ -128,22 +128,21 @@ export default {
 
 <style scoped>
 .login-container {
+  background: url("../assets/imgs/login.jpg") no-repeat;
+  height: 100vh;
   width: 100%;
-  height: 1000px;
-  //background-image: linear-gradient(270deg, #4662b4, #6990f6);
-  background: #2196f3;
-  padding: 8px;
+  overflow: hidden;
+  background-size: cover; //或者background-size:100%;
 }
 
 .mu-demo-form {
-  width: 100%;
-  /*max-width: 460px;*/
+  background: aliceblue;
 }
 
 .login-card {
   width: 100%;
   max-width: 30%;
-  //max-height: 80%;
-  margin: 50px auto;
+  max-height: 100%;
+  margin: 20px auto;
 }
 </style>
