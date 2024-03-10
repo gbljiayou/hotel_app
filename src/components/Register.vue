@@ -2,7 +2,7 @@
   <div class="login-container">
     <mu-card class="login-card" raised>
       <mu-form ref="form" :model="validateForm" label-position="left" label-width="100" class="mu-demo-form">
-        <mu-card-title title="奥利阳酒店" style="text-align: center;"></mu-card-title>
+        <mu-card-title id="login-title" title="奥利阳酒店" style="text-align: center;"></mu-card-title>
         <mu-card-text>
           <mu-form-item label="用户名" help-text="" prop="username" :rules="rules.notNull">
             <mu-text-field v-model="validateForm.username"></mu-text-field>
@@ -26,9 +26,9 @@
           <mu-form-item label="手机号" help-text="" prop="phone" :rules="rules.notNull">
             <mu-text-field v-model="validateForm.phone"></mu-text-field>
           </mu-form-item>
-<!--          <mu-form-item label="地址" help-text="" prop="address" :rules="rules.notNull">-->
-<!--            <mu-text-field v-model="validateForm.address"></mu-text-field>-->
-<!--          </mu-form-item>-->
+          <!--          <mu-form-item label="地址" help-text="" prop="address" :rules="rules.notNull">-->
+          <!--            <mu-text-field v-model="validateForm.address"></mu-text-field>-->
+          <!--          </mu-form-item>-->
           <mu-form-item label="身份证号" help-text="" prop="idcard" :rules="rules.notNull">
             <mu-text-field v-model="validateForm.idcard"></mu-text-field>
           </mu-form-item>
@@ -133,6 +133,13 @@ export default {
   width: 100%;
   overflow: hidden;
   background-size: cover; //或者background-size:100%;
+}
+
+#login-title {
+  text-align: center;
+  font-weight: bold;
+  font-family: Serif;
+  font-size: large;
 }
 
 .mu-demo-form {
